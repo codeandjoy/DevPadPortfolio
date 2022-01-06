@@ -7,9 +7,9 @@ const state = {
             "name": "App 1",
             "color": "green",
             "priority": 0,
-            "Notes": [
+            "notes": [
             ],
-            "ToExecute": [
+            "to_execute": [
             ],
 
         },
@@ -19,9 +19,9 @@ const state = {
             "name": "App 2",
             "color": "red",
             "priority": 1,
-            "Notes": [
+            "notes": [
             ],
-            "ToExecute": [
+            "to_execute": [
             ],
             
         },
@@ -31,9 +31,9 @@ const state = {
             "name": "App 3",
             "color": "green",
             "priority": 2,
-            "Notes": [
+            "notes": [
             ],
-            "ToExecute": [
+            "to_execute": [
             ],
             
         }
