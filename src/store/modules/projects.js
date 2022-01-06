@@ -5,6 +5,7 @@ const state = {
         {
             "id": 1,
             "name": "App 1",
+            "color": "green",
             "priority": 0,
             "Notes": [
             ],
@@ -16,6 +17,7 @@ const state = {
         {
             "id": 2,
             "name": "App 2",
+            "color": "red",
             "priority": 1,
             "Notes": [
             ],
@@ -27,6 +29,7 @@ const state = {
         {
             "id": 3,
             "name": "App 3",
+            "color": "green",
             "priority": 2,
             "Notes": [
             ],
