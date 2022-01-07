@@ -54,24 +54,17 @@ export default{
         }
     }
 
-    .mgmt-tab::before,
-    .mgmt-tab:last-child::after{
+    .mgmt-tab::before{
         content: '';
         
         display: block;
         
         position: absolute;
         left: 20%;
+        top: 0;
 
         width: 60%;
-    }
 
-    .mgmt-tab::before{
-        top: 0;
         border-top: 2px solid #202020;
-    }
-    .mgmt-tab:last-child::after{
-        bottom: 0;
-        border-bottom: 2px solid #202020;
     }
 </style>
