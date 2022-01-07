@@ -44,9 +44,24 @@ const getters = {
     allProjects: state => state.projects
 };
 
-const actions = {};
+const actions = {
+    updateProject: ({commit}, updatedProject) => {
+        commit('updateProject', updatedProject)
+    }
+};
 
-const mutations = {};
+const mutations = {
+    updateProject: (state, updatedProject) => {
+        const index = state.projects.findIndex(project => project.id === updatedProject.id);
+        if (index !== -1){
+            state.projects.splice(index, 1, updatedProject)
+            console.log(
+
+                state.projects.filter(project => project.id == updatedProject.id)
+            );
+       }
+    }
+};
 
 export default{
     state,

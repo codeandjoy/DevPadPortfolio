@@ -1,17 +1,43 @@
 <template>
     <div class="color-picker-widget">
-        <div class="widget-clr clr-green"></div>
-        <div class="widget-clr clr-blue"></div>
-        <div class="widget-clr clr-purple"></div>
-        <div class="widget-clr clr-yellow"></div>
-        <div class="widget-clr clr-orange"></div>
-        <div class="widget-clr clr-red"></div>
+        <div class="widget-clr clr-green"
+            @click="update_proj_color('green')"></div>
+        <div class="widget-clr clr-blue"
+            @click="update_proj_color('blue')"></div>
+        <div class="widget-clr clr-purple"
+            @click="update_proj_color('purple')"></div>
+        <div class="widget-clr clr-yellow"
+            @click="update_proj_color('yellow')"></div>
+        <div class="widget-clr clr-orange"
+            @click="update_proj_color('orange')"></div>
+        <div class="widget-clr clr-red"
+            @click="update_proj_color('red')"></div>
     </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default{
-    name: 'ColorPickerWidget'
+    name: 'ColorPickerWidget',
+    props: ['projectData'],
+
+    methods: {
+        ...mapActions(['updateProject']),
+
+        update_proj_color: function (color){
+            const updatedProject = {
+                id: this.projectData.id,
+                name: this.projectData.name,
+                color: color,
+                priority: this.projectData.priority,
+                notes: this.projectData.notes,
+                to_execute: this.projectData.to_execute
+            }
+
+            this.updateProject(updatedProject)
+        }
+    },
 }
 </script>
 

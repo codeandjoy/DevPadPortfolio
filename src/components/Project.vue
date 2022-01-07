@@ -12,39 +12,43 @@
             @click="this.is_clr_picker_active = true"
             v-click-outside="close_clr_picker_widget">
         </div>
-        <ColorPickerWidget v-if="this.is_clr_picker_active"/>
+        <ColorPickerWidget
+            v-if="this.is_clr_picker_active"
+            :projectData="this.projectData"/>
 
-        <span>{{projectData.name}}</span>
+        <span>{{this.projectData.name}}</span>
 
         <div class="btn-menu icon-menu"></div>
         <!-- menu here -->
     </div>
 </template>
 
+
 <script>
-    import ColorPickerWidget from './ColorPickerWidget.vue'
+import ColorPickerWidget from './ColorPickerWidget.vue'
 
-    export default{
-        name: 'Project',
-        props: ['projectData'],
+export default{
+    name: 'Project',
+    props: ['projectData'],
 
-        components:{
-            ColorPickerWidget
+    components:{
+        ColorPickerWidget
+    },
+
+    data: () => {
+        return {
+            is_clr_picker_active: false
+        }
+    },
+
+    methods: {
+        close_clr_picker_widget: function () {
+            this.is_clr_picker_active = false
         },
-
-        data: () => {
-            return {
-                is_clr_picker_active: false
-            }
-        },
-
-        methods: {
-            close_clr_picker_widget: function () {
-                this.is_clr_picker_active = false
-            }
-        },
-    }
+    },
+}
 </script>
+
 
 <style lang="scss" scoped>
 .project{
