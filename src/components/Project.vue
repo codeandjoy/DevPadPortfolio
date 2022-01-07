@@ -29,6 +29,9 @@
             v-click-outside="close_proj_menu"></div>
     </div>
     
+    <ManagementTabs/>
+    <!-- v-if flag is true -->
+
     <transition
         enter-active-class="animate__animated animate__fadeIn"
         leave-active-class="animate__animated animate__fadeOut">
@@ -48,13 +51,15 @@
 import { mapActions } from 'vuex'
 
 import ColorPickerWidget from './ColorPickerWidget.vue'
+import ManagementTabs from './ManagementTabs.vue'
 
 export default{
     name: 'Project',
     props: ['projectData'],
 
     components:{
-        ColorPickerWidget
+        ColorPickerWidget,
+        ManagementTabs
     },
 
     data: () => {
