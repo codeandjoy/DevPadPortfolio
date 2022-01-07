@@ -59,15 +59,24 @@ $widget-height: 45px;
     background-color: #2C2C2C;
     border-radius: 20px;
 
+    animation-duration: .1s;
+
     .widget-clr{
         width: 20px;
         height: 20px;
 
         border-radius: 50%;
     }
+    .widget-clr:hover{
+        cursor: pointer;
+        outline: 3px solid white;
+    }
 
     .widget-clr:not(:last-child){
         margin-right: 10px;
     }
+}
+.color-picker-widget:hover{
+    cursor: auto;
 }
 </style>

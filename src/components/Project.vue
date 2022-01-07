@@ -11,12 +11,16 @@
             'clr-orange':projectData.color=='orange',
             'clr-red':projectData.color=='red',
             }"
-            @click="this.is_clr_picker_active = true"
+            @click="is_clr_picker_active = !is_clr_picker_active"
             v-click-outside="close_clr_picker_widget">
         </div>
-        <ColorPickerWidget
-            v-if="this.is_clr_picker_active"
-            :projectData="this.projectData"/>
+        <transition
+            enter-active-class="animate__animated animate__fadeIn"
+            leave-active-class="animate__animated animate__fadeOut">
+            <ColorPickerWidget
+                v-if="this.is_clr_picker_active"
+                :projectData="this.projectData"/>
+        </transition>
 
         <span>{{this.projectData.name}}</span>
 
