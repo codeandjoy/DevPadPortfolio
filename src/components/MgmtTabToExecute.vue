@@ -1,6 +1,8 @@
 <template>
-    <div>
-        ToExecute
+    <div class="mgmt-tab">
+        <span class="tab-name">ToExecute</span>
+        <div class="expand-more-btn icon-expand-more">
+        </div>
     </div>
 </template>
 

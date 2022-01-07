@@ -1,6 +1,8 @@
 <template>
-    <div>
-        Notes
+    <div class="mgmt-tab">
+        <span class="tab-name">Notes</span>
+        <div class="expand-more-btn icon-expand-more">
+        </div>
     </div>
 </template>
 
