@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import store from './store';
-import vClickOutside from 'click-outside-vue3'
+import vClickOutside from 'click-outside-vue3';
+import 'animate.css';
 
 createApp(App).use(store).use(vClickOutside).mount('#app');

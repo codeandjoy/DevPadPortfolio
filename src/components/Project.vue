@@ -1,5 +1,7 @@
 <template>
-    <div class="project">
+<div class="project">
+
+    <div class="project-tab">
         <div class="proj-color"
             :class="{
             'clr-green':projectData.color=='green',
@@ -18,9 +20,22 @@
 
         <span>{{this.projectData.name}}</span>
 
-        <div class="btn-menu icon-menu"></div>
-        <!-- menu here -->
+        <div class="btn-menu icon-menu"
+            @click="is_project_menu_active = !is_project_menu_active"
+            v-click-outside="close_proj_menu"></div>
     </div>
+    
+    <transition
+        enter-active-class="animate__animated animate__fadeIn"
+        leave-active-class="animate__animated animate__fadeOut">
+        
+        <div class="project-menu"
+            v-if="this.is_project_menu_active">
+
+            <button>Delete</button>
+        </div>
+    </transition>
+</div>
 </template>
 
 
@@ -37,14 +52,18 @@ export default{
 
     data: () => {
         return {
-            is_clr_picker_active: false
+            is_clr_picker_active: false,
+            is_project_menu_active: false
         }
     },
 
     methods: {
         close_clr_picker_widget: function () {
-            this.is_clr_picker_active = false
+            this.is_clr_picker_active = false;
         },
+        close_proj_menu: function () {
+            this.is_project_menu_active = false;
+        }
     },
 }
 </script>
@@ -53,45 +72,85 @@ export default{
 <style lang="scss" scoped>
 .project{
     position: relative;
+    width: 100%;
 
-    display: flex;
-    align-items: center;
+    .project-tab{
+        position: relative;
 
-    padding: 0 30px;
+        display: flex;
+        align-items: center;
 
-    height: 64px;
+        padding: 0 20px 0 30px;
 
-    .proj-color{
-        margin-right: 30px;
-        
-        width: 15px;
-        height: 15px;
+        height: 64px;
 
-        border-radius: 50%;
+        z-index: 1;
+
+        .proj-color{
+            margin-right: 30px;
+            
+            width: 15px;
+            height: 15px;
+
+            border-radius: 50%;
+        }
+
+        span{
+            font-weight: bold;
+            color: white;
+        }
+
+        .btn-menu{
+            margin-left: auto;
+            align-items: flex-end;
+        }
+        .icon-menu{
+            width: 26px;
+            height: 26px;
+
+            mask: url('../assets/icons/menu.svg');
+            mask-size: cover;
+            mask-position: center;
+            
+            background: #535353;
+        }
+        .btn-menu:hover{
+            cursor: pointer;
+            background: #7e7e7e;
+        }
+    }
+    .project-tab:hover{
+        cursor: pointer;
+        background-color: #000;
     }
 
-    span{
-        font-weight: bold;
-        color: white;
-    }
+    .project-menu{
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
 
-    .btn-menu{
-        margin-left: auto;
-        align-items: flex-end;
-    }
-    .icon-menu{
-        width: 6px;
-        height: 26px;
+        animation-duration: .2s;
 
-        mask: url('../assets/icons/menu.svg');
-        mask-size: cover;
-        mask-position: center;
-        
-        background: #535353;
+        z-index: 0;
+
+        button{
+            width: 200px;
+            height: 44px;
+
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+            font-size: 12pt;
+
+            background-color: #000;
+            color: #fff;
+
+            border: none;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: rgb(46, 46, 46);
+        }
     }
-}
-.project:hover{
-    background-color: #000;
-    cursor: pointer;
 }
 </style>

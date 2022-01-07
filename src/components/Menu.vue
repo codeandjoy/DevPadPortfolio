@@ -29,7 +29,7 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #menu{
     display: flex;
     flex-direction: column;
