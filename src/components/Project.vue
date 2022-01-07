@@ -29,7 +29,7 @@
             v-click-outside="close_proj_menu"></div>
     </div>
     
-    <ManagementTabs/>
+    <ManagementTabs :projectData="projectData"/>
     <!-- v-if flag is true -->
 
     <transition

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <MgmtTabNotes/>
+        <MgmtTabNotes :projectNotes="projectData.notes"/>
         <MgmtTabToExecute/>
         <!-- board (btn?) -->
     </div>
@@ -12,6 +12,7 @@ import MgmtTabToExecute from './MgmtTabToExecute.vue'
 
 export default{
     name: 'ManagementTabs',
+    props: ['projectData'],
 
     components:{
         MgmtTabNotes,
