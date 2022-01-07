@@ -46,7 +46,11 @@ const getters = {
 
 const actions = {
     updateProject: ({commit}, updatedProject) => {
-        commit('updateProject', updatedProject)
+        commit('updateProject', updatedProject);
+    },
+
+    deleteProject: ({commit}, id) => {
+        commit('deleteProject', id);
     }
 };
 
@@ -55,11 +59,14 @@ const mutations = {
         const index = state.projects.findIndex(project => project.id === updatedProject.id);
         if (index !== -1){
             state.projects.splice(index, 1, updatedProject)
-            console.log(
+        }
+    },
 
-                state.projects.filter(project => project.id == updatedProject.id)
-            );
-       }
+    deleteProject: (state, id) => {
+        const index = state.projects.findIndex(project => project.id === id);
+        if (index !== -1){
+            state.projects.splice(index, 1)
+        }
     }
 };
 

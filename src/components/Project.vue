@@ -36,7 +36,8 @@
         <div class="project-menu"
             v-if="this.is_project_menu_active">
 
-            <button>Delete</button>
+            <button
+                @click="delete_project">Delete</button>
         </div>
     </transition>
 </div>
@@ -44,6 +45,8 @@
 
 
 <script>
+import { mapActions } from 'vuex'
+
 import ColorPickerWidget from './ColorPickerWidget.vue'
 
 export default{
@@ -62,11 +65,17 @@ export default{
     },
 
     methods: {
+        ...mapActions(['deleteProject']),        
+
         close_clr_picker_widget: function () {
             this.is_clr_picker_active = false;
         },
         close_proj_menu: function () {
             this.is_project_menu_active = false;
+        },
+
+        delete_project: function (){
+            this.deleteProject(this.projectData.id)
         }
     },
 }
