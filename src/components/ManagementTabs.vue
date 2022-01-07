@@ -21,6 +21,8 @@ export default{
 </script>
 
 <style lang="scss">
+.mgmt-tab-container{
+
     .mgmt-tab{
         position: relative;
 
@@ -67,4 +69,5 @@ export default{
 
         border-top: 2px solid #202020;
     }
+}
 </style>
