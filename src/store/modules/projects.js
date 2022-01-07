@@ -8,6 +8,21 @@ const state = {
             "color": "green",
             "priority": 0,
             "notes": [
+                {
+                    "id": 1,
+                    "name": "Requirements",
+                    "content": "Stuff"
+                },
+                {
+                    "id": 2,
+                    "name": "Data",
+                    "content": "Stuff"
+                },
+                {
+                    "id": 3,
+                    "name": "Ideas",
+                    "content": "Stuff"
+                }
             ],
             "to_execute": [
             ],
@@ -20,6 +35,21 @@ const state = {
             "color": "red",
             "priority": 1,
             "notes": [
+                {
+                    "id": 4,
+                    "name": "Requirements",
+                    "content": "Stuff"
+                },
+                {
+                    "id": 5,
+                    "name": "Data",
+                    "content": "Stuff"
+                },
+                {
+                    "id": 6,
+                    "name": "Ideas",
+                    "content": "Stuff"
+                }
             ],
             "to_execute": [
             ],
@@ -32,6 +62,21 @@ const state = {
             "color": "green",
             "priority": 2,
             "notes": [
+                {
+                    "id": 7,
+                    "name": "Requirements",
+                    "content": "Stuff"
+                },
+                {
+                    "id": 8,
+                    "name": "Data",
+                    "content": "Stuff"
+                },
+                {
+                    "id": 9,
+                    "name": "Ideas",
+                    "content": "Stuff"
+                }
             ],
             "to_execute": [
             ],
