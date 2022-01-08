@@ -3,6 +3,7 @@
         <MgmtTabNotes :projectNotes="projectData.notes"/>
         <MgmtTabToExecute/>
         <!-- board (btn?) -->
+        <!-- add top border to last tab -->
     </div>
 </template>
 

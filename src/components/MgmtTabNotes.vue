@@ -6,13 +6,19 @@
         </div>
     </div>
 
-    <!-- tabs go here -->
+    <NoteTab v-for="note in projectNotes" :key="note.id" :noteData="note"/>
 </div>
 </template>
 
 <script>
+import NoteTab from './NoteTab.vue'
+
 export default{
     name: 'MgmtTabNotes',
     props: ['projectNotes'],
+
+    components: {
+        NoteTab
+    }
 }
 </script>
