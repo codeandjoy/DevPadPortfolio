@@ -57,6 +57,15 @@ export default{
             background: #fff;
         }
     }
+    .mgmt-tab:hover{
+        cursor: pointer;
+        background-color: #1f1f1f;
+    }
+    .mgmt-tab.opened{
+        .expand-more-btn{
+            transform: rotate(180deg);
+        }
+    }
 
     .mgmt-tab::before{
         content: '';
