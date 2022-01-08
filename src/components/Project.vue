@@ -2,7 +2,10 @@
 <div class="project">
 
     <div class="project-tab-container">
-        <div class="project-tab">
+        <div class="project-tab"
+            @click="is_project_focused = !is_project_focused"
+            :class="{'focused':is_project_focused}">
+
             <div class="proj-color"
                 :class="{
                 'clr-green':projectData.color=='green',
@@ -12,7 +15,7 @@
                 'clr-orange':projectData.color=='orange',
                 'clr-red':projectData.color=='red',
                 }"
-                @click="is_clr_picker_active = !is_clr_picker_active"
+                @click.stop="is_clr_picker_active = !is_clr_picker_active"
                 v-click-outside="close_clr_picker_widget">
             </div>
             <transition
@@ -26,7 +29,7 @@
             <span>{{this.projectData.name}}</span>
 
             <div class="btn-menu icon-menu"
-                @click="is_project_menu_active = !is_project_menu_active"
+                @click.stop="is_project_menu_active = !is_project_menu_active"
                 v-click-outside="close_proj_menu"></div>
         </div>
 
@@ -43,7 +46,8 @@
         </transition>
     </div>
     
-    <ManagementTabs :projectData="projectData"/>
+    <ManagementTabs :projectData="projectData"
+        v-if="is_project_focused"/>
     <!-- v-if flag is true -->
 </div>
 </template>
@@ -67,7 +71,8 @@ export default{
     data: () => {
         return {
             is_clr_picker_active: false,
-            is_project_menu_active: false
+            is_project_menu_active: false,
+            is_project_focused: false
         }
     },
 
@@ -137,6 +142,12 @@ export default{
                 cursor: pointer;
                 background: #7e7e7e;
             }
+        }
+        .project-tab.focused{
+            background-color: #000;
+        }
+        .project-tab.focused:hover{
+            background-color: #1f1f1f;
         }
         .project-tab:hover{
             cursor: pointer;

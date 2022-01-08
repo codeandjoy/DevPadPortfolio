@@ -21,6 +21,8 @@ export default {
 
     padding-left: 75px;
 
+    background-color: #000;
+
     span{
         color: #B1B1B1;
     }
