@@ -43,6 +43,7 @@
     box-sizing: border-box;
 
     font-family: 'Lato', sans-serif;
+    font-weight: bold;
     background-color: #121212;
 
     .menu-title{

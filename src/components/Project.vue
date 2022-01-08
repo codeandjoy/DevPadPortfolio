@@ -114,7 +114,6 @@ export default{
         }
 
         span{
-            font-weight: bold;
             color: white;
         }
 
@@ -157,7 +156,6 @@ export default{
             height: 44px;
 
             font-family: 'Lato', sans-serif;
-            font-weight: bold;
             font-size: 12pt;
 
             background-color: #000;

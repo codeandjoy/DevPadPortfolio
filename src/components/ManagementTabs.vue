@@ -36,8 +36,6 @@ export default{
 
         height: 64px;
 
-        font-weight: bold;
-
         .tab-name{
             color: #FFAA26;
         }

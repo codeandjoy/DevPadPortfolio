@@ -23,7 +23,6 @@ export default {
 
     span{
         color: #B1B1B1;
-        font-weight: bold;
     }
 }
 </style>
