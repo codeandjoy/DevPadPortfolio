@@ -3,8 +3,10 @@
 
     <div class="project-tab-container">
         <div class="project-tab"
-            @click="is_project_focused = !is_project_focused"
-            :class="{'focused':is_project_focused}">
+            @click="toggle_project_focus"
+            :class="{
+                'focused':is_project_focused,
+                'out-of-focus':is_project_out_of_focus}">
 
             <div class="proj-color"
                 :class="{
@@ -72,7 +74,8 @@ export default{
         return {
             is_clr_picker_active: false,
             is_project_menu_active: false,
-            is_project_focused: false
+            is_project_focused: false,
+            is_project_out_of_focus: true
         }
     },
 
@@ -84,6 +87,11 @@ export default{
         },
         close_proj_menu: function () {
             this.is_project_menu_active = false;
+        },
+
+        toggle_project_focus: function () {
+            this.is_project_focused = !this.is_project_focused;
+            this.is_project_out_of_focus = !this.is_project_out_of_focus;
         },
 
         delete_project: function (){
@@ -121,7 +129,7 @@ export default{
             }
     
             span{
-                color: white;
+                color: #fff;
             }
     
             .btn-menu{
@@ -149,9 +157,30 @@ export default{
         .project-tab.focused:hover{
             background-color: #1f1f1f;
         }
+        .project-tab.out-of-focus{
+            .proj-color{
+                opacity: 50%;
+            }
+            span{
+                color: #535353;
+            }
+            .icon-menu{
+                background: #3d3d3d;
+            }
+        }
         .project-tab:hover{
             cursor: pointer;
             background-color: #000;
+
+            .proj-color{
+                opacity: 100%;
+            }
+            span{
+                color: #fff;
+            }
+            .icon-menu{
+                background: #535353;
+            }
         }
 
         .project-menu{
