@@ -10,6 +10,10 @@
             </div>
         </div>
 
+        <div class="btn-add-project">
+            <button>+</button>
+        </div>
+
     </div>    
 </template>
 
@@ -66,6 +70,28 @@
         .projects{
             height: fit-content;
             width: 100%;
+        }
+    }
+
+    .btn-add-project{
+        width: inherit;
+
+        button{
+            text-align: center;
+            width: inherit;
+            height: 64px;
+            font-size: 32pt;
+            color: #535353;
+            
+            background-color: #121212;
+
+            border: none;
+        }
+
+        button:hover{
+            cursor: pointer;
+            color: white;
+            background-color: black;
         }
     }
 }
