@@ -1,17 +1,17 @@
 <template>
     <div class="color-picker-widget">
         <div class="widget-clr clr-green"
-            @click="update_proj_color('green')"></div>
+            @click.stop="update_proj_color('green')"></div>
         <div class="widget-clr clr-blue"
-            @click="update_proj_color('blue')"></div>
+            @click.stop="update_proj_color('blue')"></div>
         <div class="widget-clr clr-purple"
-            @click="update_proj_color('purple')"></div>
+            @click.stop="update_proj_color('purple')"></div>
         <div class="widget-clr clr-yellow"
-            @click="update_proj_color('yellow')"></div>
+            @click.stop="update_proj_color('yellow')"></div>
         <div class="widget-clr clr-orange"
-            @click="update_proj_color('orange')"></div>
+            @click.stop="update_proj_color('orange')"></div>
         <div class="widget-clr clr-red"
-            @click="update_proj_color('red')"></div>
+            @click.stop="update_proj_color('red')"></div>
     </div>
 </template>
 
