@@ -148,7 +148,7 @@ export default{
             }
             .btn-menu:hover{
                 cursor: pointer;
-                background: #7e7e7e;
+                background: #7e7e7e !important;
             }
         }
         .project-tab.focused{
